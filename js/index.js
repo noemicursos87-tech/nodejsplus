@@ -6,7 +6,7 @@
 
 
 //Importar las funciones desde el modulo de operaciones-aritmeticas.mjs
-import { suma, resta, multiplica, divide } from './operaciones-aritmeticas.mjs';
+import { sumar, restar, multiplicar, dividir } from './operaciones-aritmeticas.mjs';
 
 //Seleccionar los elementos del DOM
  // Zona numeros aleatorios
@@ -55,6 +55,31 @@ btnNuevosNumeros.addEventListener('click', () => {
     resultadoMultiplicar.textContent = '';
     resultadoDividir.textContent = '';
 }); 
+
+
+//Evento para el boton de operaciones
+btnSumar.addEventListener('click', () => {
+    const resultado = suma(aleatorioIzq, aleatorioDer);
+    resultadoSumar.textContent = `Resultado: ${resultado}`;
+});
+
+btnRestar.addEventListener('click', () => {
+    const resultado = resta(aleatorioIzq, aleatorioDer);
+    resultadoRestar.textContent = `Resultado: ${resultado}`;
+});         
+btnMultiplicar.addEventListener('click', () => {
+    const resultado = multiplica(aleatorioIzq, aleatorioDer);
+    resultadoMultiplicar.textContent = `Resultado: ${resultado}`;
+});
+btnDividir.addEventListener('click', () => {
+    try {
+        const resultado = divide(aleatorioIzq, aleatorioDer);       
+
+
+
+
+
+
 
 
 
