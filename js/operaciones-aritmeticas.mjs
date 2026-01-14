@@ -15,5 +15,8 @@ export function multiplica(a, b) {
 
 // funcion de dividir       
 export function divide(a, b) {          
+    if (b === 0) {
+        throw new Error('Error: División por cero no está definida.');
+    }
     return a / b;
 }
