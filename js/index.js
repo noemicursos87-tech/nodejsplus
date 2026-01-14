@@ -4,9 +4,11 @@
 //console.log(globalThis); //Esta es la forma correcta de hacerlo, ya que funciona en ambos entornos. Global this es de donde salen todas las instrucciones de código de navegación de node.
 //globalThis.console.log('Hola, Mundo!');   //Esto también funcionaría.
 
+//Vercel
+import { Analytics } from "@vercel/analytics/next"
 
 //Importar las funciones desde el modulo de operaciones-aritmeticas.mjs
-import { sumar, restar, multiplicar, dividir } from './operaciones-aritmeticas.mjs';
+import { suma, resta, multiplica, divide } from './operaciones-aritmeticas.mjs';
 
 //Seleccionar los elementos del DOM
  // Zona numeros aleatorios
@@ -59,27 +61,23 @@ btnNuevosNumeros.addEventListener('click', () => {
 
 //Evento para el boton de operaciones
 btnSumar.addEventListener('click', () => {
-    const resultado = suma(aleatorioIzq, aleatorioDer);
+    const resultado = sumar(aleatorioIzq, aleatorioDer);
     resultadoSumar.textContent = `Resultado: ${resultado}`;
 });
 
 btnRestar.addEventListener('click', () => {
-    const resultado = resta(aleatorioIzq, aleatorioDer);
+    const resultado = restar(aleatorioIzq, aleatorioDer);
     resultadoRestar.textContent = `Resultado: ${resultado}`;
 });         
 btnMultiplicar.addEventListener('click', () => {
-    const resultado = multiplica(aleatorioIzq, aleatorioDer);
+    const resultado = multiplicar(aleatorioIzq, aleatorioDer);
     resultadoMultiplicar.textContent = `Resultado: ${resultado}`;
 });
 btnDividir.addEventListener('click', () => {
     try {
-        const resultado = divide(aleatorioIzq, aleatorioDer);       
-
-
-
-
-
-
-
-
-
+        const resultado = dividir(aleatorioIzq, aleatorioDer);       
+        resultadoDividir.textContent = `Resultado: ${resultado}`;
+    } catch (error) {
+        resultadoDividir.textContent = error.message;
+    }       
+});
